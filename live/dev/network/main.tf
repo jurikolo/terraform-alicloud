@@ -23,4 +23,7 @@ module "network" {
 
   vpc_name = var.vpc_name
   vpc_cidr = var.vpc_cidr
+  vswitch_availability_zones = var.vswitch_availability_zones
+  vswitch_names = var.vswitch_names
+  vswitch_cidrs = var.vswitch_cidrs
 }
