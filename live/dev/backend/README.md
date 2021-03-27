@@ -1,0 +1,1 @@
+Creates a bucket in AWS S3 to serve as a Terraform state backend

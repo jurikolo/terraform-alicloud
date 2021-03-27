@@ -1,19 +1,18 @@
 terraform {
-  required_version = ">= 0.13"
+  required_version = "~> 0.14.0"
   required_providers {
     alicloud = {
       source = "aliyun/alicloud"
-      version = "1.119.0"
+      version = "1.119.1"
     }
   }
-//  backend "s3" {
-//    bucket = "jurikolo-alicloud"
-//    key = "dev/network/terraform.tfstate"
-//    region = "eu-central-1"
-//    dynamodb_table = "jurikolo-alicloud"
-//    encrypt = true
-//    profile = "default"
-//  }
+  backend "s3" {
+    bucket = "jurikolo-alicloud"
+    key = "dev/network/terraform.tfstate"
+    region = "eu-central-1"
+    encrypt = true
+    profile = "terraform"
+  }
 }
 
 provider "alicloud" { }

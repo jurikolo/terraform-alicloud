@@ -23,3 +23,4 @@ variable "vswitch_cidrs" {
   description = "List of CIDR blocks used to launch new vSwtches"
   type        = list(string)
 }
+
