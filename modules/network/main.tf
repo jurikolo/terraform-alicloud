@@ -1,5 +1,5 @@
 terraform {
-  required_version = ">= 0.13"
+  required_version = "~> 0.14.0"
 }
 
 resource "alicloud_vpc" "vpc" {
@@ -17,4 +17,16 @@ resource "alicloud_vswitch" "vswitches" {
   zone_id           = element(var.vswitch_availability_zones, count.index)
   cidr_block        = element(var.vswitch_cidrs, count.index)
   vswitch_name      = element(var.vswitch_names, count.index)
+}
+
+resource "alicloud_route_table" "custom-public-rt" {
+  vpc_id      = alicloud_vpc.vpc.id
+  name        = var.custom_public_rt_name
+  description = "Public route table"
+}
+
+resource "alicloud_route_table" "custom-private-rt" {
+  vpc_id      = alicloud_vpc.vpc.id
+  name        = var.custom_private_rt_name
+  description = "Private route table"
 }
