@@ -20,13 +20,13 @@ resource "alicloud_vswitch" "vswitches" {
 }
 
 resource "alicloud_route_table" "custom-public-rt" {
-  vpc_id      = alicloud_vpc.vpc.id
-  name        = var.custom_public_rt_name
-  description = "Public route table"
+  vpc_id           = alicloud_vpc.vpc.id
+  route_table_name = var.custom_public_rt_name
+  description      = "Public route table"
 }
 
 resource "alicloud_route_table" "custom-private-rt" {
-  vpc_id      = alicloud_vpc.vpc.id
-  name        = var.custom_private_rt_name
-  description = "Private route table"
+  vpc_id           = alicloud_vpc.vpc.id
+  route_table_name = var.custom_private_rt_name
+  description      = "Private route table"
 }
