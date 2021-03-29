@@ -1,8 +1,6 @@
 # General
 This module creates following resources:
-* VPC
-* 2 private subnets
-* 2 public subnets
+* security group
+* ECS instance with Apache HTTP server
 
-At the moment it's not possible to reduce or increase amount of subnets using variables. 
-To modify amount of subnets, modify outputs.tf file in modules and project directory.
+If you need to connect to instance, uncomment webserver-sg-ingress-rule-2 from `main.tf` file.
