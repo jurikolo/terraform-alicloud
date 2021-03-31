@@ -20,7 +20,6 @@ provider "alicloud" { }
 module "webserver" {
   source = "../../../modules/webserver"
 
-  ecs_image_id = var.ecs_image_id
   ecs_instance_type = var.ecs_instance_type
   server_port = var.server_port
   ecs_public_key = var.ecs_public_key

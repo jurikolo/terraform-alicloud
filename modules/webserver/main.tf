@@ -2,6 +2,13 @@ terraform {
   required_version = "~> 0.14.0"
 }
 
+data "alicloud_images" "ecs_image" {
+  owners = "system"
+  name_regex = "^aliyun_2"
+  most_recent = true
+  instance_type = var.ecs_instance_type
+}
+
 resource "alicloud_security_group" "webserver-sg" {
   name = "webserver-sg"
   description = "Webserver SG"
@@ -54,7 +61,7 @@ resource "alicloud_key_pair" "webserver-kp" {
 }
 
 resource "alicloud_instance" "webserver-ecs" {
-  image_id = var.ecs_image_id
+  image_id = data.alicloud_images.ecs_image.images[0].id
   instance_type = var.ecs_instance_type
   security_groups = alicloud_security_group.webserver-sg.*.id
   internet_max_bandwidth_in = 1

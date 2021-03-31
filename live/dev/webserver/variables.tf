@@ -1,8 +1,3 @@
-variable "ecs_image_id" {
-  description = "ECS image ID"
-  type        = string
-}
-
 variable "ecs_instance_type" {
   description = "ECS instance type"
   type        = string
