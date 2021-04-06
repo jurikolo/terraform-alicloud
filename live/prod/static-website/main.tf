@@ -20,6 +20,7 @@ provider "alicloud" { }
 module "static-website" {
   source = "../../../modules/static-website"
 
+  domain_name = var.domain_name
   bucket_name = var.bucket_name
   index_html = var.index_html
   error_html = var.error_html

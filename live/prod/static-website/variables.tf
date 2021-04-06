@@ -1,3 +1,8 @@
+variable "domain_name" {
+  description = "Domain name"
+  type        = string
+}
+
 variable "bucket_name" {
   description = "OSS bucket name"
   type        = string

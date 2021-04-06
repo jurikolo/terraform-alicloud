@@ -12,3 +12,14 @@ output "oss_bucket_id" {
   value       = alicloud_oss_bucket.oss-bucket.id
   description = "Bucket ID"
 }
+
+output "cdn_id" {
+  value       = alicloud_cdn_domain_new.cdn.id
+  description = "CDN ID"
+}
+
+output "cdn_cname" {
+  value       = alicloud_cdn_domain_new.cdn.cname
+  description = "CDN CNAME"
+}
+
